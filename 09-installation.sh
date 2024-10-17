@@ -10,7 +10,7 @@ fi
 
 dnf list installed git
 
-if [ $? -ne 0]
+if [ $? -ne 0 ]
 then 
 echo "Git is not installed...going to install it"
 dnf install git -y
@@ -27,17 +27,17 @@ fi
 
 dnf list installed mysql
 
-if [ $? -ne 0]
-then 
-echo "mysql is not installed...going to install it"
-dnf install mysql -y
 if [ $? -ne 0 ]
-then
-echo "mysql installation failed"
-exit 1
-else 
-echo "mysql installation successful"
-fi
+then 
+    echo "mysql is not installed...going to install it"
+    dnf install mysql -y
+    if [ $? -ne 0 ]
+    then
+        echo "mysql installation failed"
+        exit 1
+    else 
+        echo "mysql installation successful"
+    fi
 else 
 echo "mysql is already installed"
 fi
