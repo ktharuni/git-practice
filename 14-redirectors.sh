@@ -29,7 +29,7 @@ USAGE(){
     echo "$R Usage: $N sudo sh 14-redirectors.sh package1 package2....."
     exit 1
 }
-if [ $# -eq 0]
+if [ $# -eq 0 ]
 then
     USAGE
 fi
