@@ -23,7 +23,7 @@ if [ $? -ne 0 ]
 then 
 echo "Git is not installed...going to install it"
 dnf install git -y
-VALIDATE $?
+VALIDATE $? "Installing git"
 else 
 echo "Git is already installed"
 fi
@@ -34,7 +34,7 @@ if [ $? -ne 0 ]
 then 
     echo "mysql is not installed...going to install it"
     dnf install mysql -y
-    VALIDATE $?
+    VALIDATE $? "Installing mysql"
 else 
 echo "mysql is already installed"
 fi
