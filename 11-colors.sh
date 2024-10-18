@@ -1,8 +1,9 @@
 #!/bin/bash
 
 USERID=$(id -u)
-R="\e[32m"
-G="\e[33m"
+R="\e[31m"
+G="\e[32m"
+N="\e[0m"
 
 if [ $USERID -ne 0 ]
 then 
@@ -12,10 +13,10 @@ fi
 VALIDATE(){
     if [ $1 -ne 0 ]
     then
-        echo "$2 is $R failed $N"
+        echo -e "$2 is $R failed $N"
         exit 1
     else  
-       echo "$2 is $G successful $N"
+       echo -e "$2 is $G successful $N"
     fi
 }
 
