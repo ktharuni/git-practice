@@ -13,16 +13,16 @@ mkdir -p $LOGS_FOLDER
 
 if [ $USERID -ne 0 ]
 then 
-    echo "$R Please run this script with root privileges $N" &>> $LOG_FILE
+    echo "$R Please run this script with root privileges $N" | tee -a &>> $LOG_FILE
     exit 1
 fi
 VALIDATE(){
     if [ $1 -ne 0 ]
     then
-        echo -e "$2 is $R failed $N" &>> $LOG_FILE
+        echo -e "$2 is $R failed $N" | tee -a &>> $LOG_FILE
         exit 1
     else  
-       echo -e "$2 is $G successful $N" &>> $LOG_FILE
+       echo -e "$2 is $G successful $N" | tee -a &>> $LOG_FILE
     fi
 }
 USAGE(){
@@ -36,13 +36,13 @@ fi
 
 for package in $@
 do
-dnf list installed $package &>> $LOG_FILE 
+dnf list installed $package | tee -a &>> $LOG_FILE 
 if [ $? -ne 0 ]
 then 
-echo -e "$Y $package is not installed...going to install it $N" &>> $LOG_FILE
-dnf install $package -y
+echo -e "$Y $package is not installed...going to install it $N" | tee -a &>> $LOG_FILE
+dnf install $package -y | tee -a &>> $LOG_FILE
 VALIDATE $? "Installing $package" 
 else 
-echo -e "$Y $package is already installed $N" &>> $LOG_FILE
+echo -e "$Y $package is already installed $N" tee -a &>> $LOG_FILE
 fi
 done
