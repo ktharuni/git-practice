@@ -25,6 +25,13 @@ VALIDATE(){
        echo -e "$2 is $G successful $N" &>> $LOG_FILE
     fi
 }
+USAGE(){
+    echo "$R Usage: $N sudo sh 14-redirectors.sh package1 package2....."
+}
+if [ $# -eq 0]
+then
+    USAGE
+fi
 
 for package in $@
 do
