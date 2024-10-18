@@ -10,10 +10,10 @@ fi
 VALIDATE(){
     if [ $1 -ne 0 ]
     then
-        echo "command failed to execute"
+        echo "$2 is failed"
         exit 1
     else  
-       echo "command exection successful"
+       echo "$2 is successful"
     fi
 }
 
