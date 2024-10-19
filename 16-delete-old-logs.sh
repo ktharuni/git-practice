@@ -8,13 +8,13 @@ Y="\e[33m"
 
 if [ -d $SOURCE_DIR ]
 then
-    echo "$SOURCE_DIR $G Exists $N"
+    echo -e "$SOURCE_DIR $G Exists $N"
 else
-    echo "$SOURCE_DIR $G does not exists $N"
+    echo -e "$SOURCE_DIR $G does not exists $N"
     exit 1
 fi
 
-FILES=$(find . -name "*.log" -mtime +14 -exec ls -lrt {} /;)
+FILES=$(find . -name "*.log" -mtime +14)
 
 echo "Files=$FILES"
 
