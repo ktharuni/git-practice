@@ -15,7 +15,6 @@ USAGE()
 if [ $# -lt 2 ]
 then
     USAGE
-    exit 1
 fi
 
 if [ ! -d $SOURCE_DIR ]
@@ -28,7 +27,7 @@ then
 fi
 
 FILES=$(find $SOURCE_DIR -name "*.log" -mtime +14)
-echo "files:$FILES"
+echo "files:$FILES" 
 
 #if [ -n $FILES ]
 #then 
