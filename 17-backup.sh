@@ -1,4 +1,4 @@
-!#/bin/bash
+#!/bin/bash
 
 SOURCE_DIR=$1
 DESTINATION_DIR=$2
@@ -7,7 +7,7 @@ R="\e[31m"
 G="\e[32m"
 N="\e[0m"
 
-USAGE
+USAGE()
 {
     echo -e "$R Usage : $N sh backup.sh <source dir> <destination dir> <days(optional)>
 }
@@ -34,5 +34,4 @@ then
     echo "files found"
 else
     echo "files does not found which are older than $DAYS"
-    exit 1
 fi
