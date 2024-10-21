@@ -38,8 +38,8 @@ echo "Files: $FILES"
 if [ ! -z $FILES ] #true if FILES is empty, ! makes it expression false
 then
     echo "Files are found"
-    ZIP_FILES="$DEST_DIR/apps-log-$TIMESTAMP.zip" 
-    FILES=$(find ${SOURCE_DIR} -name "*.log" -mtime +$DAYS) | zip "$ZIP_FILES" -@
+    ZIP_FILE="$DEST_DIR/app-logs-$TIMESTAMP.zip"
+    find ${SOURCE_DIR} -name "*.log" -mtime +$DAYS | zip "$ZIP_FILE" -@
 else
     echo "files older than $DAYS does not found"
 fi
