@@ -2,7 +2,7 @@
 
 USERID=$(id -u)
 
-if [ $USERID -ne 0 ]
+if [ $USERID -ne 0 ]#CHECK_ROOT() FUNCTION USE IT IF NEEDED
 then 
     echo "Please run this script with root privileges"
     exit 1

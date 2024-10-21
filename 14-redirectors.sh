@@ -29,7 +29,7 @@ USAGE(){
     echo "$R Usage: $N sudo sh 14-redirectors.sh package1 package2....."
     exit 1
 } 
-echo "Script started execution at $(date) | tee -a $LOG_FILE"
+echo "Script started execution at $(date)" | tee -a $LOG_FILE
 if [ $# -eq 0 ]
 then
     USAGE
