@@ -32,7 +32,7 @@ else
     echo "mysql already installed"
 fi
 
-dnf list installed nginx
+dnf list installed nodejs
 
 if [ $? -ne 0 ]
 then
@@ -40,5 +40,5 @@ then
     dnf install nginx -y
     VALIDATE $? nginx
 else
-    echo "nginx already installed"
+    echo -e "nginx $G already installed $N"
 fi
