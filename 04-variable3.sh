@@ -1,4 +1,4 @@
-!#/bin/bash
+#!/bin/bash
 
 echo "Please enter name of person1:"
 
